@@ -5,5 +5,6 @@ global:
 
 scrape_configs:
   - job_name: 'prometheus'
-    static_configs:
-    - targets: ['172.31.32.105:9090','172.31.40.187:9100','172.31.32.8:9100']
+    file_sd_configs:
+      - files:
+        - 'https://raw.githubusercontent.com/21chuks/prometheus-and-grafana-project/main/prometheus_serviceDiscovery.yml'
